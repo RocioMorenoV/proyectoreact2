@@ -1,0 +1,30 @@
+.flexContainer {
+  display: flex;
+}
+
+.marginAuto {
+  margin: auto;
+}
+
+.navBar-Container {
+  display: flex;
+  background-color: rgb(133, 4, 4);
+  justify-content: space-between;
+}
+
+.navBar-Links {
+  display: flex;
+  list-style-type: none;
+  margin: auto 0;
+}
+
+.navBar-Links-Item {
+  margin: 0 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.navBar-Links-Item:hover {
+  color: red;
+}
