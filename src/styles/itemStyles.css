@@ -1,0 +1,24 @@
+.card-container {
+  margin: 1.5vw auto;
+  font-size: large;
+  text-align: center;
+  border-radius: 8px;
+  border: solid 1px rgb(0, 0, 0);
+  width: min-content;
+  padding: 1vw;
+  background-color: rgb(114, 9, 9);
+}
+
+.grid-container {
+  display: grid;
+  margin: 2vw auto;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: large;
+}
+
+.item-img {
+  height: 5vw;
+  width: 5vw;
+  border-radius: 8px;
+  margin: 0.5vw;
+}
