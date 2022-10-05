@@ -9,8 +9,8 @@ const Item = ({ item }) => {
   return (
     <div className="card-container">
       <img src={image} alt="img" className="item-img" />
-      <div>{item.name}</div>
-      <div>Price: ${item.price}</div>
+      <div className="item-text">{item.name}</div>
+      <div className="item-text">Price: ${item.price}</div>
     </div>
   );
 };
