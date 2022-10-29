@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { itemList } from "./data/itemList";
 import ItemCard from "./ItemCard";
 import Loading from "./Loading";
 import { useParams } from "react-router-dom";
 import "../styles/itemStyles.css";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 
 const ItemList = () => {
   const [item, setItem] = useState([]);
@@ -12,23 +18,46 @@ const ItemList = () => {
 
   useEffect(() => {
     setloading(true);
-    getItem().then((response) => {
-      console.log(response);
-      setItem(response);
-      setloading(false);
-    });
+    getItem();
   }, [categoryId]);
 
   const getItem = () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        if (categoryId) {
-          resolve(itemList.filter((i) => i.categoryId == categoryId));
-        } else {
-          resolve(itemList);
-        }
-      }, 1000);
-    });
+    const db = getFirestore();
+
+    if (categoryId != null) {
+      getDocs(
+        query(
+          collection(db, "items"),
+          where("categoryId", "==", Number(categoryId))
+        )
+      )
+        .then((docSnap) => {
+          setItem(docSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+          console.log(
+            "Document data:",
+            docSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+          );
+        })
+        .then(
+          setTimeout(() => {
+            setloading(false);
+          }, 1000)
+        );
+    } else {
+      getDocs(collection(db, "items"))
+        .then((docSnap) => {
+          setItem(docSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+          console.log(
+            "Document data:",
+            docSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+          );
+        })
+        .then(
+          setTimeout(() => {
+            setloading(false);
+          }, 1000)
+        );
+    }
   };
 
   return (

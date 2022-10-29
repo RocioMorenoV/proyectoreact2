@@ -1,0 +1,95 @@
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  text-align: center;
+  margin: 4vw auto;
+}
+
+.cart-grid-container {
+  display: grid;
+  margin: 3px auto;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: large;
+  border: solid;
+  border-width: 2px;
+  background-color: salmon;
+  border-color: transparent;
+}
+
+.grid-header {
+  display: grid;
+  margin: 3px auto;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: large;
+  border: solid;
+  border-width: 2px;
+  background-color: brown;
+  border-color: transparent;
+}
+
+.total-text {
+  font-size: 36px;
+}
+
+.clear-btn {
+  width: 10vw;
+  margin: 0 auto 3vw auto;
+  border-radius: 12px;
+  border-width: 2px;
+  background-color: brown;
+  border-color: transparent;
+  color: white;
+  padding: 5px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border: solid;
+  border-width: 2px;
+  background-color: salmon;
+  border-color: transparent;
+  padding: 15px;
+  border-radius: 12px;
+  width: 30vw;
+}
+
+.form-container-inside {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-color: transparent;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.input-box {
+  border-color: transparent;
+  border-radius: 4px;
+}
+
+.finish-btn {
+  width: 10vw;
+  margin: 2vw auto 1vw auto;
+  border-radius: 12px;
+  border-width: 2px;
+  background-color: brown;
+  border-color: transparent;
+  color: white;
+  padding: 5px;
+}
+
+.input-label {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.empty-cart {
+  font-size: 56px;
+}
+
+.disabled {
+  background-color: grey;
+}

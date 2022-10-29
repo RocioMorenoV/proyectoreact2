@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Descripcion del proyecto
+
+Este proyecto consiste en un e-commerce de una tienda ficticia en la cual se venden objetos para juegos de la indole de "Tabletop roleplaying games", elegí hacerlo sobre este tema porque es un hobby que me apasiona mucho y me parecipo que se prestaba para el proyecto.
+No utilicé librerias o dependencias extras.
+
 ## Available Scripts
 
 In the project directory, you can run:
